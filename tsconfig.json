@@ -1,9 +1,7 @@
 {
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
-    "types": [
-      "bun-types"
-    ],
+    "types": ["bun-types"],
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "module": "esnext",
     "target": "esnext",
@@ -11,25 +9,28 @@
     "noEmit": true,
     "allowImportingTsExtensions": true,
     "moduleDetection": "force",
-    "jsx": "react-jsx", 
-    "allowJs": true, 
+    "jsx": "react-jsx",
+    "allowJs": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "composite": true,
     "downlevelIteration": true,
     "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"]
     },
     "verbatimModuleSyntax": true,
     "plugins": [
       {
         "name": "@astrojs/ts-plugin"
-      },
-    ],
-  }
+      }
+    ]
+  },
+  "include": ["./src/env.d.ts", "**/*.ts", "**/*.tsx", "tailwind.config.cjs"],
+  "exclude": ["node_modules"]
 }
